@@ -12,7 +12,7 @@ services:
 
   django_backend:
     container_name: education_platform
-    build: ./education_platform
+    build: ./reminders_backend
     command: python manage.py runserver 0.0.0.0:8000
     restart: unless-stopped
     ports:
