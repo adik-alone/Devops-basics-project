@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  postgres_db:
+    image: postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./env_variables/postgres_db.env
+    volumes:
+      - postgres_db_data:/var/lib/postgresql/data
+
+  django_backend:
+    container_name: education_platform
+    build: ./education_platform
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./env_variables/django_backend.env
+    depends_on:
+      - postgres_db
+
+volumes:
+  postgres_db_data:
