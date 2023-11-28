@@ -16,10 +16,10 @@ urlpatterns = [
     path('reminders/', ReminderViewSet.as_view({
         'get': 'list',
         'post': 'create'
-    })),
-    path('notes/<int:pk>', ReminderViewSet.as_view({
+    }), name='reminders'),
+    path('reminders/<int:pk>', ReminderViewSet.as_view({
         'get': 'retrieve',
         'patch': 'partial_update',
         'delete': 'destroy'
-    })),
+    }), name='reminder'),
 ]
