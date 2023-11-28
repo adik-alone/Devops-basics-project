@@ -1,10 +1,10 @@
-name: Github Action Test Django Backend
+name: Unit tests
 on: [push]
 jobs:
   Test-Django-Part:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v2
-      - run: pip install -r reminders_backend/requirements.txt
+      - run: pip install -r .reminders_backend/requirements.txt
       - run: python manage.py test reminders_api
