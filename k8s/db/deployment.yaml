@@ -33,8 +33,10 @@ spec:
               mountPath: /var/lib/postgresql/data
           env:
             - name: POSTGRES_DB
-              value: postgres
+              value: yourdbname
+
             - name: POSTGRES_USER
-              value: root
+              value: yourdbuser
+
             - name: POSTGRES_PASSWORD
-              value: password
+              value: yourdbpassword

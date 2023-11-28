@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django
+  labels:
+    app: django
+spec:
+  selector:
+    matchLabels:
+      app: django
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: django
+        tier: backend
+    spec:
+      containers:
+        - image: klov148/django-devops:latest
+          name: django
+          ports:
+            - containerPort: 8080
+              name: django
+          env:
+            - name: DB_HOST
+              value: postgres-service
+
+            - name: DB_NAME
+              value: yourdbname
+
+            - name: DB_USER
+              value: yourdbuser
+
+            - name: DB_PASS
+              value: yourdbpassword
+
