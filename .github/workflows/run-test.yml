@@ -1,10 +1,11 @@
 name: Unit tests
 on: [push]
 jobs:
-  Test-Django-Part:
+  Run-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v2
       - run: pip install -r reminders_backend/requirements.txt
+      - run: pip install --upgrade setuptools
       - run: python reminders_backend/manage.py test reminders_api
