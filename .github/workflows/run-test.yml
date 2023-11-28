@@ -7,4 +7,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install -r reminders_backend/requirements.txt
-      - run: ./reminders_backends/pytest
+      - run: python manage.py test reminders_api
