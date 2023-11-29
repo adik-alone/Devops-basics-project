@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django
+  labels:
+    app: {{ .Values.app }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.app }}
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app }}
+        tier: backend
+    spec:
+      containers:
+        - image: {{ .Values.image }}
+          name: django
+          ports:
+            - containerPort: 8080
+              name: django
+          env:
+            - name: DB_HOST
+              value: {{ .Values.db_host }}
+
+            - name: DB_NAME
+              value: {{ .Values.db_name }}
+
+            - name: DB_USER
+              value: {{ .Values.db_user }}
+
+            - name: DB_PASS
+              value: {{ .Values.db_password }}
+

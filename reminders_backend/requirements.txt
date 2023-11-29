@@ -6,3 +6,4 @@ psycopg2-binary==2.9.8
 PyJWT==2.8.0
 pytz==2023.3.post1
 sqlparse==0.4.4
+dj_database_url==2.1.0

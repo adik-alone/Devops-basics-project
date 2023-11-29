@@ -1,0 +1,6 @@
+app: django
+image: klov148/django-devops:latest
+db_host: postgres-service
+db_name: yourdbname
+db_user: yourdbuser
+db_password: yourdbpassword
