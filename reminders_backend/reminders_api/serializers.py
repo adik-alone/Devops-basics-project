@@ -7,4 +7,4 @@ class ReminderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reminder
         fields = "__all__"
-        exclude = "creator"
+        exclude = ("creator")
