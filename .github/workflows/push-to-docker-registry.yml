@@ -21,7 +21,7 @@ jobs:
         env:
           CR_REGISTRY: crp72itrhnjl6epd59q4
           CR_REPOSITORY: reminder-service
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: latest
         run: |
           cd reminders_backend
           docker build -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG .
