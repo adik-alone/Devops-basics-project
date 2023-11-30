@@ -1,5 +1,5 @@
 app: django
-image: klov148/django-devops:latest
+image: cr.yandex/crp72itrhnjl6epd59q4/reminder-service:latest
 db_host: postgres-service
 db_name: yourdbname
 db_user: yourdbuser
